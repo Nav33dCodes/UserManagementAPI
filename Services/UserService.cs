@@ -11,9 +11,7 @@ namespace UserManagementAPI.Services
         private readonly ApplicationDbContext _context;
         private readonly IMapper _mapper;
 
-        public UserService(
-            ApplicationDbContext context,
-            IMapper mapper)
+        public UserService(ApplicationDbContext context , IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
@@ -21,18 +19,14 @@ namespace UserManagementAPI.Services
 
         public async Task<List<UserDto>> GetAllUsersAsync()
         {
-            var users = await _context.Users
-                .AsNoTracking()
-                .ToListAsync();
+            var users = await _context.Users.AsNoTracking().ToListAsync();
 
             return _mapper.Map<List<UserDto>>(users);
         }
 
         public async Task<UserDto?> GetUserByIdAsync(int id)
         {
-            var user = await _context.Users
-                .AsNoTracking()
-                .FirstOrDefaultAsync(u => u.Id == id);
+            var user = await _context.Users.AsNoTracking().FirstOrDefaultAsync(u => u.Id == id);
 
             if (user == null)
                 return null;
@@ -53,12 +47,9 @@ namespace UserManagementAPI.Services
             return _mapper.Map<UserDto>(user);
         }
 
-        public async Task<UserDto?> UpdateUserAsync(
-            int id,
-            UpdateUserDto dto)
+        public async Task<UserDto?> UpdateUserAsync(int id , UpdateUserDto dto)
         {
-            var user = await _context.Users
-                .FirstOrDefaultAsync(u => u.Id == id);
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == id);
 
             if (user == null)
                 return null;
@@ -72,8 +63,7 @@ namespace UserManagementAPI.Services
 
         public async Task<bool> DeleteUserAsync(int id)
         {
-            var user = await _context.Users
-                .FirstOrDefaultAsync(u => u.Id == id);
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == id);
 
             if (user == null)
                 return false;
