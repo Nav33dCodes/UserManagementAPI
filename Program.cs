@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using UserManagementAPI.Services;
 using UserManagementAPI.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,6 +17,9 @@ builder.Services.AddSwaggerGen();
 
 // Register AutoMapper
 builder.Services.AddAutoMapper(cfg => cfg.AddProfile<UserManagementAPI.Mappings.MappingProfile>());
+
+// Register UserService
+builder.Services.AddScoped<IUserService, UserService>();
 
 var app = builder.Build();
 
