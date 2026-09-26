@@ -1,0 +1,53 @@
+###############################################################################
+# .gitignore — ASP.NET Core Web API (.NET 10)
+# Stack: EF Core + SQL Server, AutoMapper, Swagger
+###############################################################################
+
+# ── Build output ──────────────────────────────────────────────────────────────
+bin/
+obj/
+
+# ── NuGet (restored via dotnet restore) ───────────────────────────────────────
+packages/
+*.nupkg
+*.snupkg
+
+# ── Secrets & environment config ──────────────────────────────────────────────
+# Keep appsettings.json (template), ignore environment-specific overrides
+appsettings.Development.json
+appsettings.Local.json
+appsettings.Production.json
+.env
+.env.*
+secrets.json
+
+# ── Visual Studio ──────────────────────────────────────────────────────────────
+.vs/
+*.suo
+*.user
+*.userosscache
+*.rsuser
+TestResults/
+*.trx
+
+# ── Visual Studio Code ─────────────────────────────────────────────────────────
+.vscode/
+
+# ── JetBrains Rider / ReSharper ────────────────────────────────────────────────
+.idea/
+_ReSharper*/
+*.DotSettings.user
+
+# ── Windows OS ────────────────────────────────────────────────────────────────
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ── Local SQLite DBs (if used for dev/testing) ────────────────────────────────
+*.db
+*.sqlite
+*.sqlite3
+
+# ── Publish / release artifacts ───────────────────────────────────────────────
+publish/
+release/
