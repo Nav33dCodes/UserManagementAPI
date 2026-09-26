@@ -38,8 +38,7 @@ namespace UserManagementAPI.Controllers
 
         // POST: api/User
         [HttpPost]
-        public async Task<ActionResult<UserDto>> CreateUser(
-            CreateUserDto dto)
+        public async Task<ActionResult<UserDto>> CreateUser(CreateUserDto dto)
         {
             var user = await _userService.CreateUserAsync(dto);
 
@@ -52,9 +51,7 @@ namespace UserManagementAPI.Controllers
 
         // PUT: api/User/5
         [HttpPut("{id}")]
-        public async Task<ActionResult<UserDto>> UpdateUser(
-            int id,
-            UpdateUserDto dto)
+        public async Task<ActionResult<UserDto>> UpdateUser(int id , UpdateUserDto dto)
         {
             var user = await _userService.UpdateUserAsync(id, dto);
 
