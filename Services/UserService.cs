@@ -62,7 +62,7 @@ namespace UserManagementAPI.Services
         }
 
 
-//service of
+
         public async Task<bool> DeleteUserAsync(int id)
         {
             var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == id);
