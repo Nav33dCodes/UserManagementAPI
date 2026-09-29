@@ -55,7 +55,7 @@ There is **no frontend** — this is a pure backend API consumed by tools like *
 | Technology | Version | Purpose |
 |---|---|---|
 | ASP.NET Core | .NET 10 | Web framework |
-| Entity Framework Core | 10.0.12 | ORM — talk to the database |
+| Entity Framework Core | 10.0.12 | ORM — talk to  database |
 | SQL Server (SQLEXPRESS) | — | Relational database |
 | AutoMapper | 16.2.0 | Object-to-object mapping |
 | Swashbuckle (Swagger) | 10.2.3 | API documentation & testing UI |
