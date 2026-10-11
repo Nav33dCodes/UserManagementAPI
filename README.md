@@ -472,7 +472,7 @@ public async Task<List<UserDto>> GetAllUsersAsync()
 
 **Why async?**
 
-When querying the database, the CPU just waits for the disk/network. With `async/await`, the thread is **freed** during that wait to handle other requests. This makes the API handle more users simultaneously.
+When querying  database, the CPU just waits for the disk/network. With `async/await`, the thread is **freed** during that wait to handle other requests. This makes the API handle more users simultaneously.
 
 > 💡 **Learn**: `async` methods return `Task` or `Task<T>`. Always use `await` when calling them. Never use `.Result` or `.Wait()` — it causes deadlocks.
 
